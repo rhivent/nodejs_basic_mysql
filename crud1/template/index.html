@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block title %} Index Page {% endblock %}
+
+{% block content %}
+<!-- MENU -->
+<ul>
+	<li><a href="/">HOME</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+
+<h1>{{ title }} </h1>
+<a href="/insert">TAMBAH DATA</a>
+<table border="1" style="width: 400px;border-collapse: collapse;">
+	<thead>
+		<th>NIM</th>
+		<th>Nama</th>
+		<th>Alamat</th>
+		<th>Action</th>
+	</thead>
+	<tbody>
+		{% for d in data %}
+		<tr>
+			<td>{{ d.nim }}</td>
+			<td>{{ d.nama }}</td>
+			<td>{{ d.alamat }}</td>
+			<td width="100px">
+				<a href="/update/{{ d.nim }}">EDIT</a>
+				<a href="/delete/{{ d.nim }}" onclick="return confirm('ARE YOU SURE ?')">DELETE</a>
+			
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+{% endblock %}

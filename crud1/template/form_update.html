@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block title %} FORM UPDATE {% endblock %}
+
+{% block content %}
+	<form method="POST">
+		<label>NIM</label>	
+		<input type="text" name="nim" value="{{ data.nim }}" readonly />
+		<br />
+		<br />
+		<label>Nama</label>	
+		<input type="text" name="nama" value="{{ data.nama }}" />
+		<br />
+		<br />
+		<label>Alamat</label>
+		<textarea name="alamat">{{ data.alamat }}</textarea>	
+		<br />
+		<br />
+		<input type="submit" value="UPDATE" />
+	</form>
+{% endblock %}
